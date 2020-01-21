@@ -30,9 +30,11 @@ let products = Array.from($products);
 
 
 function deletingProducts(elem){
-  document.querySelector('.product').remove();
-  calcAll();
+  let button = event.currentTarget;
+  let row = button.parentNode.parentNode;
+  row.parentNode.removeChild(row);
 }
+
 $calc.onclick = calcAll;
 $delete.forEach(elem => elem.onclick = deletingProducts);
 
